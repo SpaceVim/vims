@@ -4,9 +4,14 @@ services:
 before_install:
   - docker pull spacevim/vims
 
+jobs:
+  include:
+    - env: VIM=vim73
+    - env: VIM=vim74
+    - env: VIM=vim
+    - env: VIM=neovim-stable
+    - env: VIM=neovim
+
+
 script:
-  - docker run -it --rm spacevim/vims vim73 --version
-  - docker run -it --rm spacevim/vims vim74 --version
-  - docker run -it --rm spacevim/vims vim --version
-  - docker run -it --rm spacevim/vims neovim-stable --version
-  - docker run -it --rm spacevim/vims neovim --version
+  - docker run -it --rm spacevim/vims $VIM --version
