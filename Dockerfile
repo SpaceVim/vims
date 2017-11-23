@@ -1,4 +1,4 @@
-FROM testbed/vim:latest
+FROM testbed/vim:8
 
 RUN install_vim -tag v7.3.429 -py -name vim73 -build \
                 -tag v7.4.052 -py2 -py3 -ruby -lua -name vim74 -build \
