@@ -3,6 +3,7 @@ services:
 
 before_install:
   - docker pull spacevim/vims
+  - docker inspect --format="{{.Id}}" spacevim/vims
 
 jobs:
   include:
